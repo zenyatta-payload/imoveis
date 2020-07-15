@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>&#x1F3E0; Imóveis</title>
+    <meta charset="UTF-8">
+
+    <!------------------------------------------------ CSS -------------------------------------------------->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <!-- jQuery CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/dt-1.10.21/r-2.2.5/datatables.min.css" />
+
+    <!------------------------------------------------ JS ---------------------------------------------------->
+    <!-- jQuery JS -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Google Charts-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Customizando o tamanho da fonte na classe table-condensed para aplicar na tblImoveis -->
+    <style type="text/css">
+        .table-condensed {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conteudo" class="container py-4">
+        <header class="page-header pb-4">
+            <div class="jumbotron">
+                <h1>Imóveis &#x1F3D8;</h1>
+            </div>
+            <div class="col-md-8 rounded shadow-sm">
+                <ul class="list-group list-group-flush">
+                    <a class="list-group-item" href="#tabela-informacoes-imoveis">&#x2714; Informações</a>
+                    <a class="list-group-item" href="#indicadores-graficos">&#x2714; Indicadores Gráficos</a>
+                </ul>
+            </div>
+        </header>
+        <section class="pt-4 py-5" id="tabela-informacoes-imoveis">
+            <h2 class="pb-2 mb-4 font-italic border-bottom">Informações</h2>
+            <table class="table table-striped table-bordered table-sm table-condensed" cellspacing="0" id="tblImoveis">
+                <thead>
+                    <tr>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Modalidade de Venda</th>
+                        <th>Preço</th>
+                        <th>Valor Avaliação</th>
+                        <th>Desconto(%)</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Endereço</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Modalidade de Venda</th>
+                        <th>Preço</th>
+                        <th>Valor Avaliação</th>
+                        <th>Desconto(%)</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section class="py-4" id="indicadores-graficos">
+            <h2 class="pb-2 mb-4 font-italic border-bottom">Indicadores Gráficos</h2>
+              <div class="row pb-5">
+                  <div id="grafico-quantidade" class="col-md">
+                      <h5>&#x1F4CA; Quantidade de Imóveis por Modaliddade de Venda</h5>
+                      <div id="grafico_quantidade_modalidade"></div>
+                  </div>
+                  <div id="grafico-valor" class="col-md">
+                      <h5>&#x1F4CA; Valor Total de Imóveis por Modaliddade de Venda</h5>
+                      <div id="grafico_valor_total_modalidade"></div>
+                  </div>
+              </div>
+              <div class="row pb-5">
+                  <div id="grafico-preco" class="col-md">
+                      <h5>&#x1F4CA; Preço Oferta Total de Imóveis por Modaliddade de Venda</h5>
+                      <div id="grafico_preco_total_modalidade"></div>
+                  </div>
+              </div>
+
+              <div id="graficos-cidade">
+                  <h5> &#x26AB; Distribuição de Volume de Venda por Cidade</h5>
+                  <div class="row">
+                      <div class="col-md">
+                          <h6> &#x25B6; Quantidade de Imóveis por Cidade</h6>
+                          <div id="grafico_cidades"></div>
+                      </div>
+                      <div class="col-md">
+                          <h6> &#x25B6; Valor Total de Imóveis por Cidade</h6>
+                          <div id="grafico_cidades_valor"></div>
+                      </div>
+                  </div>
+              </div>
+        </section>
+    </div>
+
+    <footer class="footer text-muted">
+        <hr class="featurette-divider">
+        <div class="container">
+            <p>&copy; 2020 Imóveis</p>
+        </div>
+    </footer>
+
+    <!-- Funções JS -->
+    <script src="inicializa.js"></script>
+    <script src="tabela.js"></script>
+    <script src="graficos.js"></script>
+    <script src="formata.js"></script>
+</body>
+
+</html>
